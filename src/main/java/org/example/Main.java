@@ -13,7 +13,7 @@ public class Main {
         PatienceSortRealisation<Integer> patienceSort = new PatienceSortRealisation<>();
         DataGenerate dataGenerate = new DataGenerate();
         dataGenerate.generate();
-        Scanner scanner = null;
+        Scanner scanner;
         try {
             scanner = new Scanner(new File("C:\\Users\\User\\IdeaProjects\\PatienceSort\\src\\main\\java\\org\\example\\data.txt"));
 
@@ -35,6 +35,7 @@ public class Main {
                 System.out.println(list.size() +";"+ (double) (endTime-startTime)/1000000 +";" + patienceSort.getIterations());
 
             }
+            scanner.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
